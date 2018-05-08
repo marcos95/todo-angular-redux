@@ -1,0 +1,21 @@
+<footer id="footer" class="footer">
+  <span id="todo-count" class="todo-count">{{ todoItemsLength$ | async }} items left</span>
+  <ul id="filters" class="filters">
+    <li>
+      <a (click)="doFilter('SHOW_ALL')" [class.selected]="(filter$ | async) == 'SHOW_ALL'">
+        All
+      </a>
+    </li>
+    <li>
+      <a (click)="doFilter('SHOW_ACTIVE')" [class.selected]="(filter$ | async) == 'SHOW_ACTIVE'">
+        Active
+      </a>
+    </li>
+    <li>
+      <a (click)="doFilter('SHOW_DONE')" [class.selected]="(filter$ | async) =='SHOW_DONE'">
+        Completed
+      </a>
+    </li>
+  </ul>
+  <button id="clear-completed" class="clear-completed" *ngIf="(todoCompletedItemsLength$ | async) > 0" (click)="clearCompleted()">Clear completed</button>
+</footer>
