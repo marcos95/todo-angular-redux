@@ -21,15 +21,17 @@ export class NewTodoComponent implements OnInit {
   }
 
   saveTodo() {
-    const action = new TodoAddAction({
-      id: Math.random().toString(),
-      title: this.textField.value,
-      completed: false,
-      date: new Date()
-    });
+    if (this.textField.valid) {
+      const action = new TodoAddAction({
+        id: Math.random().toString(),
+        title: this.textField.value,
+        completed: false,
+        date: new Date()
+      });
 
-    this.store.dispatch(action);
-    this.textField.setValue('');
+      this.store.dispatch(action);
+      this.textField.setValue('');
+    }
   }
 
 }

@@ -2,17 +2,17 @@
   <span id="todo-count" class="todo-count">{{ todoItemsLength$ | async }} items left</span>
   <ul id="filters" class="filters">
     <li>
-      <a (click)="doFilter('SHOW_ALL')" [class.selected]="(filter$ | async) == 'SHOW_ALL'">
+      <a (click)="doFilter('SHOW_ALL')" href="javascript:;" [class.selected]="(filter$ | async) == 'SHOW_ALL'">
         All
       </a>
     </li>
     <li>
-      <a (click)="doFilter('SHOW_ACTIVE')" [class.selected]="(filter$ | async) == 'SHOW_ACTIVE'">
+      <a (click)="doFilter('SHOW_ACTIVE')" href="javascript:;" [class.selected]="(filter$ | async) == 'SHOW_ACTIVE'">
         Active
       </a>
     </li>
     <li>
-      <a (click)="doFilter('SHOW_DONE')" [class.selected]="(filter$ | async) =='SHOW_DONE'">
+      <a (click)="doFilter('SHOW_DONE')" href="javascript:;" [class.selected]="(filter$ | async) =='SHOW_DONE'">
         Completed
       </a>
     </li>
